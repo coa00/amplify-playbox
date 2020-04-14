@@ -1,0 +1,20 @@
+{
+    "appName": "contentsmanager",
+    "roleName": "pinpointLambdaRole3e00e25c",
+    "cloudWatchPolicyName": "cloudWatchPolicy3e00e25c",
+    "pinpointPolicyName": "pinpointPolicy3e00e25c",
+    "authPolicyName": "pinpoint_amplify_3e00e25c",
+    "unauthPolicyName": "pinpoint_amplify_3e00e25c",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

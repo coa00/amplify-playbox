@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-contents-manager-dev-23214-authRole",
+            "UnauthRoleArn": "arn:aws:iam::796534533428:role/amplify-contents-manager-dev-23214-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::796534533428:role/amplify-contents-manager-dev-23214-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-contents-manager-dev-23214-deployment",
+            "UnauthRoleName": "amplify-contents-manager-dev-23214-unauthRole",
+            "StackName": "amplify-contents-manager-dev-23214",
+            "StackId": "arn:aws:cloudformation:us-east-2:796534533428:stack/amplify-contents-manager-dev-23214/39c28c00-7b51-11ea-8ba5-060a435a9e52",
+            "AmplifyAppId": "d3ndeil9yrvilx"
+        },
+        "categories": {
+            "auth": {
+                "contentsmanager9c407961": {}
+            }
+        }
+    }
+}
