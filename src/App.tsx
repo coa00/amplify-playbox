@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import '@aws-amplify/ui/dist/style.css';
-import Amplify, { Analytics, Storage, API, graphqlOperation } from 'aws-amplify';
+import Amplify, { Auth, Analytics, Storage, API, graphqlOperation } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { withAuthenticator, S3Album } from 'aws-amplify-react';
 Amplify.configure(awsconfig);
@@ -30,10 +30,16 @@ const addTodo = `mutation createTodo($name:String! $description: String!) {
 
 function App() {
   React.useEffect(()=>{
+    async function getIdentityId(){
+      const currentCredentials = await Auth.currentCredentials();
+      setIdentityId(currentCredentials.identityId);    
+    }
+    getIdentityId();
     Analytics.record('Amplify_CLI');
   }, []);
 
   const [file, setFile] = React.useState(null);
+  const [identityId, setIdentityId] = React.useState("");
 
   const todoMutation = async () => {
     const todoDetails = {
@@ -66,6 +72,7 @@ function App() {
   }
   const level = "private"; 
   const path = "/";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -76,7 +83,10 @@ function App() {
         <input type="file" onChange={uploadFile} />
         <button onClick={listQuery}>GraphQL Query</button>
         <button onClick={todoMutation}>GraphQL Mutation</button>
-        <S3Album level={level} path={path} identityId="1234" picker/>
+ 
+        {identityId &&
+          <S3Album level={level} path={path} identityId={identityId} picker/> 
+        }
       </div>
     </div>
   );
