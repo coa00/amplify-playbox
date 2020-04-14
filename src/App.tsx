@@ -5,16 +5,7 @@ import '@aws-amplify/ui/dist/style.css';
 import Amplify, { Analytics, Storage, API, graphqlOperation } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { withAuthenticator, S3Album } from 'aws-amplify-react';
-Amplify.configure({
-  ...awsconfig,
-  Storage: {
-    AWSS3: {
-        bucket: '', //REQUIRED -  Amazon S3 bucket
-        region: 'XX-XXXX-X', //OPTIONAL -  Amazon service region
-    }
-  }
-});
-Storage.configure({ level: 'private' });
+Amplify.configure(awsconfig);
 
 const listTodos = `query listTodos {
   listTodos{
