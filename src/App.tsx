@@ -64,6 +64,8 @@ function App() {
       })  
     }
   }
+  const level = "private"; 
+  const path = "/";
   return (
     <div className="App">
       <header className="App-header">
@@ -74,9 +76,7 @@ function App() {
         <input type="file" onChange={uploadFile} />
         <button onClick={listQuery}>GraphQL Query</button>
         <button onClick={todoMutation}>GraphQL Mutation</button>
-        {/* 
-         // @ts-ignore */}
-        <S3Album level="private" path="" />
+        <S3Album level={level} path={path} identityId="1234" picker/>
       </div>
     </div>
   );
