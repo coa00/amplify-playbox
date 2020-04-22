@@ -4,7 +4,7 @@ import '@aws-amplify/ui/dist/style.css';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react';
-import MainLayout from './components/layouts/Main';
+import MainLayout from './components/layouts/MainLayout';
 import Router from './Router';
 
 Amplify.configure(awsconfig);
