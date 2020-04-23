@@ -4,3 +4,10 @@ type Todo @model {
   description: String
   priority: String
 }
+
+type Todo2 @model {
+  id: ID!
+  name: String!
+  description: String
+  priority: String
+}

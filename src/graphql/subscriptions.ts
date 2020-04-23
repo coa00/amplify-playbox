@@ -7,6 +7,10 @@ export const onCreateTodo = /* GraphQL */ `
       id
       name
       description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -16,6 +20,10 @@ export const onUpdateTodo = /* GraphQL */ `
       id
       name
       description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -25,6 +33,49 @@ export const onDeleteTodo = /* GraphQL */ `
       id
       name
       description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreateTodo2 = /* GraphQL */ `
+  subscription OnCreateTodo2 {
+    onCreateTodo2 {
+      id
+      name
+      description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateTodo2 = /* GraphQL */ `
+  subscription OnUpdateTodo2 {
+    onUpdateTodo2 {
+      id
+      name
+      description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteTodo2 = /* GraphQL */ `
+  subscription OnDeleteTodo2 {
+    onDeleteTodo2 {
+      id
+      name
+      description
+      priority
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
