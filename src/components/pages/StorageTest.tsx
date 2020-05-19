@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Auth, Analytics, Storage, API, graphqlOperation } from 'aws-amplify';
 import { S3Album } from 'aws-amplify-react';
 
-const listTodos = `query listTodos {
+const listTodos = `query listBoats {
   listTodos{
     items{
       id

@@ -1,5 +1,15 @@
 import React from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
 import MaterialTable from "material-table";
+const listTodos = `query listTodos {
+  listTodos{
+    items{
+      id
+      name
+      description
+    }
+  }
+}`;
 
 function Boats() {
   return (
@@ -18,23 +28,20 @@ function Boats() {
         ),
       },
       { title: 'Id', field: 'id' },
-      { title: 'First Name', field: 'first_name' },
-      { title: 'Last Name', field: 'last_name' },
+      { title: 'name', field: 'name' }
     ]}
     data={query =>
       new Promise((resolve, reject) => {
-        let url = 'https://reqres.in/api/users?'
-        url += 'per_page=' + query.pageSize
-        url += '&page=' + (query.page + 1)
-        fetch(url)
-          .then(response => response.json())
-          .then(result => {
-            resolve({
-              data: result.data,
-              page: result.page - 1,
-              totalCount: result.total,
-            })
+        // @ts-ignore
+        API.graphql(graphqlOperation(listTodos)).then(res=>{
+          console.log(res);
+          const { items } = res.data.listTodos;
+          resolve({
+            data: items,
+            page: 0,
+            totalCount: items.length,
           })
+        });
       })
     }
   />

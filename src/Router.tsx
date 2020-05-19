@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -11,7 +10,6 @@ import Boats from './components/pages/Boats';
 
 function AppRouter()   {
   return (
-  <Router>
     <Switch>
       <Route path="/" exact>
         <StorageTest />
@@ -27,8 +25,7 @@ function AppRouter()   {
       </Route>
 
     </Switch>
-  </Router>
-  );
+   );
 }
 
 export default AppRouter;

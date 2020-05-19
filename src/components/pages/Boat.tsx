@@ -38,7 +38,7 @@ export default function Boat() {
 
       <div>
         <TextField
-          label="メーカー"
+          label="詳細"
           style={{ margin: 8 }}
           placeholder="艇の名前を入力してください。"
           helperText=""
